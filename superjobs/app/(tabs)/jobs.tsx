@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   },
   jobsListContent: {
     padding: 20,
-    gap: 16,
+    gap: 18,
   },
   jobCard: {
     marginBottom: 16,
