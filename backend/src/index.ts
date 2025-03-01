@@ -2,7 +2,6 @@ import { Hono } from "hono";
 import axios from "axios";
 import * as cheerio from "cheerio";
 
-// Define your TypeScript interfaces
 interface job {
   id: number;
   name: string;
@@ -11,14 +10,13 @@ interface job {
   company: string;
   location: string;
   datePosted: string;
-  // additional fields can be added here (e.g., salary, skills, etc.)
 }
 
 interface site {
   name: string;
   link: string;
   jobsLink: string;
-  location: string; // CSS selector to extract job link/title on the search page
+  location: string; 
   jobs: job[];
 }
 
@@ -69,7 +67,6 @@ async function scrapeBaytJob(link: string, id: number): Promise<job> {
   }
 }
 
-// Site configurations – update selectors as needed
 const sitesData: site[] = [
   {
     name: "Hire Lebanese",
@@ -97,7 +94,6 @@ async function getLatestJobs(): Promise<job[]> {
   for (const site of sitesData) {
     let jobLinks: string[] = [];
 
-    // Build search URL and collect job links for the given title
     for (const title of [defaultTitle]) {
       let searchLink = "";
       switch (site.name) {
@@ -149,7 +145,6 @@ async function getLatestJobs(): Promise<job[]> {
 
 const app = new Hono();
 
-// GET /jobs route returns the latest scraped jobs as JSON
 app.get("/jobs", async (c) => {
   try {
     const jobs = await getLatestJobs();
@@ -158,6 +153,11 @@ app.get("/jobs", async (c) => {
     console.error("Error in GET /jobs:", error);
     return c.json({ error: error.message }, 500);
   }
+});
+
+
+app.get("/", async (c) => {
+  return c.json({ message: "API Healthy!" });
 });
 
 export default app
