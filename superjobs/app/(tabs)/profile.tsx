@@ -48,9 +48,6 @@ export default function ProfileScreen() {
         </Pressable>
         </Link>
         <Text style={styles.headerTitle}>Profile</Text>
-        <Pressable style={styles.headerButton}>
-          <Ionicons name="settings-outline" size={24} color="#fff" />
-        </Pressable>
       </View>
 
       <ScrollView
@@ -113,7 +110,7 @@ export default function ProfileScreen() {
         </View>
 
         {/* Bio Section */}
-        <Animated.View
+        {/* <Animated.View
           style={styles.bioCard}
           entering={FadeInDown.delay(500)}
         >
@@ -127,7 +124,7 @@ export default function ProfileScreen() {
           <Text style={styles.bioText}>
             Passionate product designer with 8+ years of experience in creating user-centered digital experiences. Specialized in mobile app design and design systems.
           </Text>
-        </Animated.View>
+        </Animated.View> */}
 
         {/* Resume Section */}
         <Animated.View

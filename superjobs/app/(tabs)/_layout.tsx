@@ -31,6 +31,15 @@ export default function TabLayout() {
           ),
         }}
       />
+    <Tabs.Screen
+        name="superai"
+        options={{
+          title: 'SuperAi',
+          tabBarIcon: ({ size, color }) => (
+            <Ionicons name="rocket-outline" size={size} color={color} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="profile"
         options={{

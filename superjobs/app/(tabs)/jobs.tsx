@@ -122,9 +122,9 @@ export default function JobsScreen() {
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
         <Text style={styles.title}>Find Your Next Role</Text>
-        <Pressable style={styles.filterButton} onPress={handleFilterButtonPress}>
-          <Ionicons name="options" size={24} color="#fff" />
-        </Pressable>
+        {/* <Pressable style={styles.filterButton} onPress={handleFilterButtonPress}>
+          <Ionicons name="options" size={24} color="#fff" /> // filter button
+        </Pressable> */}
       </View>
 
       <ScrollView
@@ -133,7 +133,7 @@ export default function JobsScreen() {
         style={styles.filtersContainer}
         contentContainerStyle={styles.filters}
       >
-        {['All', 'Remote', 'Full-time', 'Contract', 'Part-time'].map((filter) => (
+        {['All', "Remote", "On Site"].map((filter) => (
           <FilterChip
             key={filter}
             label={filter}
